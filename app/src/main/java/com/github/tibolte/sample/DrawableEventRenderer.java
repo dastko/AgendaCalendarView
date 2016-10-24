@@ -1,5 +1,6 @@
 package com.github.tibolte.sample;
 
+import android.support.v7.widget.CardView;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
@@ -13,17 +14,34 @@ public class DrawableEventRenderer extends EventRenderer<DrawableCalendarEvent> 
 
     @Override
     public void render(View view, DrawableCalendarEvent event) {
-        ImageView imageView = (ImageView) view.findViewById(R.id.view_agenda_event_image);
         TextView txtTitle = (TextView) view.findViewById(com.github.tibolte.agendacalendarview.R.id.view_agenda_event_title);
         TextView txtLocation = (TextView) view.findViewById(com.github.tibolte.agendacalendarview.R.id.view_agenda_event_location);
-        LinearLayout descriptionContainer = (LinearLayout) view.findViewById(com.github.tibolte.agendacalendarview.R.id.view_agenda_event_description_container);
+        //LinearLayout descriptionContainer = (LinearLayout) view.findViewById(com.github.tibolte.agendacalendarview.R.id.view_agenda_event_description_container);
         LinearLayout locationContainer = (LinearLayout) view.findViewById(com.github.tibolte.agendacalendarview.R.id.view_agenda_event_location_container);
+        CardView cardView = (CardView) view.findViewById(R.id.card_view);
+        ImageView imageView = (ImageView) view.findViewById(R.id.transition_image);
 
-        descriptionContainer.setVisibility(View.VISIBLE);
+        if(event.getImageView() != null) {
+            if (event.getImageView() != 1) {
+                imageView.setImageResource(R.drawable.ic_check_circle_black_24dp);
+            }
+        } else {
+            imageView.setVisibility(View.GONE);
+        }
 
-        imageView.setImageDrawable(view.getContext().getResources().getDrawable(event.getDrawableId()));
+//        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
+//            imageView.setImageDrawable(view.get(R.drawable.ic_check_circle_black_24dp, getApplicationContext().getTheme()));
+//        } else {
+//            imageView.setImageDrawable(ContextCompat.getDrawable(this, R.drawable.ic_check_circle_black_24dp));
+//        }
+
+        //descriptionContainer.setVisibility(View.VISIBLE);
+
 
         txtTitle.setTextColor(view.getResources().getColor(android.R.color.black));
+//        Drawable drawable = imageView.getDrawable();
+//        if(drawable != null)
+//            imageView.setImageDrawable(drawable);
 
         txtTitle.setText(event.getTitle());
         txtLocation.setText(event.getLocation());
@@ -36,10 +54,11 @@ public class DrawableEventRenderer extends EventRenderer<DrawableCalendarEvent> 
 
         if (event.getTitle().equals(view.getResources().getString(com.github.tibolte.agendacalendarview.R.string.agenda_event_no_events))) {
             txtTitle.setTextColor(view.getResources().getColor(android.R.color.black));
+            cardView.setVisibility(View.GONE);
         } else {
             txtTitle.setTextColor(view.getResources().getColor(com.github.tibolte.agendacalendarview.R.color.theme_text_icons));
         }
-        descriptionContainer.setBackgroundColor(event.getColor());
+        //descriptionContainer.setBackgroundColor(event.getColor());
         txtLocation.setTextColor(view.getResources().getColor(com.github.tibolte.agendacalendarview.R.color.theme_text_icons));
     }
 

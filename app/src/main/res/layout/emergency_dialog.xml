@@ -1,0 +1,43 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="horizontal"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginLeft="30dp"
+    android:layout_marginRight="30dp">
+
+    <LinearLayout
+        android:id="@+id/repeat_action_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:layout_marginRight="10dp"
+        android:layout_marginEnd="10dp"
+        android:duplicateParentState="false"
+        android:orientation="vertical"
+        android:padding="10dp"
+        android:visibility="visible">
+
+
+        <LinearLayout
+            android:id="@+id/repeat_every"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:clickable="false"
+            android:duplicateParentState="false"
+            android:focusable="false"
+            android:orientation="vertical"
+            >
+
+            <EditText
+                android:id="@+id/repeat_action_info"
+                android:layout_width="match_parent"
+                android:layout_margin="10dp"
+                android:textSize="14sp"
+                android:layout_height="wrap_content"
+                android:gravity="left"
+                android:hint="Meer informatie toevoegen"
+                android:textColor="@color/primary" />
+        </LinearLayout>
+
+    </LinearLayout>
+</LinearLayout>

@@ -154,6 +154,8 @@ public class WeeksAdapter extends RecyclerView.Adapter<WeeksAdapter.WeekViewHold
                     txtMonth.setText(dayItem.getMonth());
                     txtDay.setTypeface(null, Typeface.BOLD);
                     txtMonth.setTypeface(null, Typeface.BOLD);
+                    txtMonth.setTextColor(mContext.getResources().getColor(R.color.grey_dark));
+                    txtDay.setTextColor(mContext.getResources().getColor(R.color.grey_dark));
                 }
 
                 // Check if this day is in the past

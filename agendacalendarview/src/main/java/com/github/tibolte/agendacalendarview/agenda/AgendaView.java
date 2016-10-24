@@ -3,6 +3,7 @@ package com.github.tibolte.agendacalendarview.agenda;
 import android.animation.Animator;
 import android.animation.ObjectAnimator;
 import android.content.Context;
+import android.os.Build;
 import android.util.AttributeSet;
 import android.view.LayoutInflater;
 import android.view.MotionEvent;
@@ -45,6 +46,9 @@ public class AgendaView extends FrameLayout {
 
         mAgendaListView = (AgendaListView) findViewById(R.id.agenda_listview);
         mShadowView = findViewById(R.id.view_shadow);
+        if (Build.VERSION.SDK_INT < Build.VERSION_CODES.LOLLIPOP) {
+            mShadowView.setBackgroundDrawable(getResources().getDrawable(R.drawable.shadow));
+        }
 
         BusProvider.getInstance().toObserverable()
                 .subscribe(event -> {
@@ -115,6 +119,8 @@ public class AgendaView extends FrameLayout {
                 @Override
                 public void onAnimationStart(Animator animation) {
                     mShadowView.setVisibility(GONE);
+
+
                 }
 
                 @Override

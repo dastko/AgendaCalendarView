@@ -108,12 +108,31 @@ public class DayItem implements Parcelable {
 
     @Override
     public String toString() {
-        return "DayItem{"
-                + "Date='"
-                + mDate.toString()
-                + ", value="
-                + mValue
-                + '}';
+        return getDayName(getDayOftheWeek())
+                + ", "
+                + getMonth()
+                + " "
+                + getValue();
+    }
+    public static String getDayName(int day){
+        switch(day){
+            case 0:
+                return "Maandag";
+            case 1:
+                return "Dinsdag";
+            case 2:
+                return "Woensdag";
+            case 3:
+                return "Donderdag";
+            case 4:
+                return "Vrijdag";
+            case 5:
+                return  "Zaterdag";
+            case 6:
+                return "Zondag";
+        }
+
+        return "Wrong Day";
     }
 
     // region Interface - Parcelable

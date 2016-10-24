@@ -1,17 +1,20 @@
 package com.github.tibolte.agendacalendarview.agenda;
 
-import com.github.tibolte.agendacalendarview.models.BaseCalendarEvent;
-import com.github.tibolte.agendacalendarview.models.CalendarEvent;
-import com.github.tibolte.agendacalendarview.render.DefaultEventRenderer;
-import com.github.tibolte.agendacalendarview.render.EventRenderer;
-
 import android.support.annotation.NonNull;
+import android.support.v4.content.ContextCompat;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
 
+import com.github.tibolte.agendacalendarview.R;
+import com.github.tibolte.agendacalendarview.models.BaseCalendarEvent;
+import com.github.tibolte.agendacalendarview.models.CalendarEvent;
+import com.github.tibolte.agendacalendarview.render.DefaultEventRenderer;
+import com.github.tibolte.agendacalendarview.render.EventRenderer;
+
 import java.util.ArrayList;
+import java.util.Calendar;
 import java.util.List;
 
 import se.emilsjolander.stickylistheaders.StickyListHeadersAdapter;
@@ -42,7 +45,7 @@ public class AgendaAdapter extends BaseAdapter implements StickyListHeadersAdapt
         notifyDataSetChanged();
     }
 
-    // endregion
+        // endregion
 
     // region Interface - StickyListHeadersAdapter
 

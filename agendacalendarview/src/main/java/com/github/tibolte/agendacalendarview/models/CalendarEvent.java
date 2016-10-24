@@ -1,5 +1,7 @@
 package com.github.tibolte.agendacalendarview.models;
 
+import android.widget.ImageView;
+
 import java.util.Calendar;
 
 public interface CalendarEvent {
@@ -7,6 +9,8 @@ public interface CalendarEvent {
     long getId();
 
     void setId(long mId);
+
+    int getColor();
 
     Calendar getStartTime();
 
@@ -17,6 +21,8 @@ public interface CalendarEvent {
     void setEndTime(Calendar mEndTime);
 
     String getTitle();
+
+    ImageView getSharedImage();
 
     void setTitle(String mTitle);
 
@@ -31,6 +37,10 @@ public interface CalendarEvent {
     WeekItem getWeekReference();
 
     void setWeekReference(WeekItem mWeekReference);
+
+    Integer getImageView();
+
+    void setImageView(Integer id);
 
     CalendarEvent copy();
 }

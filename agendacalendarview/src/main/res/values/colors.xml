@@ -21,4 +21,7 @@
     <color name="theme_accent">#FFEB3B</color>
     <color name="theme_text_icons">#FFFFFF</color>
 
+    <color name="grey_dark">#576770</color>
+    <color name="grey_light">#B3BFC5</color>
+
 </resources>

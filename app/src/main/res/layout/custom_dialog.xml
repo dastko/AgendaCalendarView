@@ -1,0 +1,45 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="10dp">
+
+    <org.adw.library.widgets.discreteseekbar.DiscreteSeekBar
+        android:id="@+id/seek_bar_custom"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="50dp"
+        android:paddingLeft="20dp"
+        android:paddingRight="20dp"
+        app:dsb_max="90"
+        app:dsb_min="0"
+        app:dsb_thumbSize="30dp" />
+
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_below="@id/seek_bar_custom"
+        android:layout_marginLeft="28dp"
+        android:layout_marginStart="28dp"
+        android:paddingBottom="20dp"
+        android:text="0 minuten"
+        android:textColor="@color/grey_light"
+        android:textStyle="italic" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentRight="true"
+        android:layout_below="@id/seek_bar_custom"
+        android:layout_marginEnd="36dp"
+        android:layout_marginRight="36dp"
+        android:paddingBottom="20dp"
+        android:text="90 minuten"
+        android:textColor="@color/grey_light"
+        android:textStyle="italic" />
+
+</RelativeLayout>

@@ -7,17 +7,19 @@ import java.util.Calendar;
 
 public class DrawableCalendarEvent extends BaseCalendarEvent {
     private int mDrawableId;
+    private Integer mImageView;
 
     // region Constructors
 
-    public DrawableCalendarEvent(long id, int color, String title, String description, String location, long dateStart, long dateEnd, int allDay, String duration, int drawableId) {
-        super(id, color, title, description, location, dateStart, dateEnd, allDay, duration);
+    public DrawableCalendarEvent(long id, int color, String title, String description, String location, long dateStart, long dateEnd, int allDay, String duration, int drawableId, Integer imageView) {
+        super(id, color, title, description, location, dateStart, dateEnd, allDay, duration, imageView);
         this.mDrawableId = drawableId;
     }
 
-    public DrawableCalendarEvent(String title, String description, String location, int color, Calendar startTime, Calendar endTime, boolean allDay, int drawableId) {
-        super(title, description, location, color, startTime, endTime, allDay);
+    public DrawableCalendarEvent(String title, String description, String location, int color, Calendar startTime, Calendar endTime, boolean allDay, int drawableId, Integer imageView) {
+        super(title, description, location, color, startTime, endTime, allDay, imageView);
         this.mDrawableId = drawableId;
+        this.mImageView = imageView;
     }
 
     public DrawableCalendarEvent(DrawableCalendarEvent calendarEvent) {
@@ -40,6 +42,7 @@ public class DrawableCalendarEvent extends BaseCalendarEvent {
     // endregion
 
     // region Class - BaseCalendarEvent
+
 
     @Override
     public CalendarEvent copy() {

@@ -1,5 +1,7 @@
 package com.github.tibolte.agendacalendarview.models;
 
+import android.widget.ImageView;
+
 import java.util.Calendar;
 
 /**
@@ -78,6 +80,8 @@ public class BaseCalendarEvent implements CalendarEvent {
 
     // region Constructor
 
+    private Integer mImageView;
+
     /**
      * Initializes the event
      *
@@ -91,7 +95,8 @@ public class BaseCalendarEvent implements CalendarEvent {
      * @param allDay      Int that can be equal to 0 or 1.
      * @param duration    The duration of the event in RFC2445 format.
      */
-    public BaseCalendarEvent(long id, int color, String title, String description, String location, long dateStart, long dateEnd, int allDay, String duration) {
+    public BaseCalendarEvent(long id, int color, String title, String description, String location, long dateStart, long dateEnd, int allDay, String duration,
+                             Integer imageView) {
         this.mId = id;
         this.mColor = color;
         this.mAllDay = (allDay == 1) ? true : false;
@@ -104,6 +109,8 @@ public class BaseCalendarEvent implements CalendarEvent {
         this.mStartTime.setTimeInMillis(dateStart);
         this.mEndTime = Calendar.getInstance();
         this.mEndTime.setTimeInMillis(dateEnd);
+
+        this.mImageView = imageView;
     }
 
     /**
@@ -114,9 +121,9 @@ public class BaseCalendarEvent implements CalendarEvent {
      * @param color The color of the event (for display in the app).
      * @param startTime The start time of the event.
      * @param endTime The end time of the event.
-     * @param allDay Indicates if the event lasts the whole day.
+     * @param allDay Indicates if the event lasts the whole day.w
      */
-    public BaseCalendarEvent(String title, String description, String location, int color, Calendar startTime, Calendar endTime, boolean allDay) {
+    public BaseCalendarEvent(String title, String description, String location, int color, Calendar startTime, Calendar endTime, boolean allDay, Integer imageView) {
         this.mTitle = title;
         this.mDescription = description;
         this.mLocation = location;
@@ -124,7 +131,16 @@ public class BaseCalendarEvent implements CalendarEvent {
         this.mStartTime = startTime;
         this.mEndTime = endTime;
         this.mAllDay = allDay;
+        this.mImageView = imageView;
     }
+
+    public BaseCalendarEvent(String title, String description, String location, int color) {
+        this.mTitle = title;
+        this.mDescription = description;
+        this.mLocation = location;
+        this.mColor = color;
+    }
+
 
     public BaseCalendarEvent(BaseCalendarEvent calendarEvent) {
         this.mId = calendarEvent.getId();
@@ -136,6 +152,7 @@ public class BaseCalendarEvent implements CalendarEvent {
         this.mLocation = calendarEvent.getLocation();
         this.mStartTime = calendarEvent.getStartTime();
         this.mEndTime = calendarEvent.getEndTime();
+        this.mImageView = calendarEvent.getImageView();
     }
 
     /**
@@ -228,6 +245,11 @@ public class BaseCalendarEvent implements CalendarEvent {
         return mTitle;
     }
 
+    @Override
+    public ImageView getSharedImage() {
+        return null;
+    }
+
     public void setTitle(String mTitle) {
         this.mTitle = mTitle;
     }
@@ -272,6 +294,16 @@ public class BaseCalendarEvent implements CalendarEvent {
         this.mWeekReference = mWeekReference;
     }
 
+    @Override
+    public Integer getImageView() {
+        return mImageView;
+    }
+
+    @Override
+    public void setImageView(Integer id) {
+        this.mImageView = id;
+    }
+
     public String getWeatherIcon() {
         return mWeatherIcon;
     }
@@ -288,10 +320,21 @@ public class BaseCalendarEvent implements CalendarEvent {
         this.mTemperature = mTemperature;
     }
 
+    public int getmColor() {
+        return mColor;
+    }
+
+    public void setmColor(int mColor) {
+        this.mColor = mColor;
+    }
+
+
     @Override
     public CalendarEvent copy() {
         return new BaseCalendarEvent(this);
     }
+
+
 
     // endregion
 

@@ -6,7 +6,8 @@
         android:id="@+id/view_shadow"
         android:layout_width="match_parent"
         android:layout_height="5dp"
-        android:background="@drawable/shadow">
+        android:elevation="5dp"
+        android:background="#FFFFFFFF">
     </View>
 
     <com.github.tibolte.agendacalendarview.agenda.AgendaListView
@@ -14,8 +15,6 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:animationCache="false"
-        android:divider="@color/calendar_divider_color"
-        android:dividerHeight="1dp"
         android:overScrollMode="never"
         android:scrollbars="none"
         android:scrollingCache="false"/>

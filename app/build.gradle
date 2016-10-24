@@ -3,14 +3,14 @@ apply plugin: 'me.tatarka.retrolambda'
 
 android {
     compileSdkVersion 23
-    buildToolsVersion "23.0.1"
+    buildToolsVersion "23.0.3"
 
     defaultConfig {
-        applicationId "com.github.tibolte.sample"
-        minSdkVersion 14
+        applicationId "com.tts.agenda.test"
+        minSdkVersion 16
         targetSdkVersion 23
-        versionCode 1
-        versionName "1.0"
+        versionCode 4
+        versionName "1.0.3"
     }
     buildTypes {
         release {

@@ -21,14 +21,17 @@ public class AgendaListView extends StickyListHeadersListView {
 
     public AgendaListView(Context context) {
         super(context);
+        setSelector(android.R.color.transparent);
     }
 
     public AgendaListView(Context context, AttributeSet attrs) {
         super(context, attrs);
+        setSelector(android.R.color.transparent);
     }
 
     public AgendaListView(Context context, AttributeSet attrs, int defStyleAttr) {
         super(context, attrs, defStyleAttr);
+        setSelector(android.R.color.transparent);
     }
 
     // endregion

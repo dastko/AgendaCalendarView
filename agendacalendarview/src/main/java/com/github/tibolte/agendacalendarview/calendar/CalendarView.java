@@ -217,7 +217,11 @@ public class CalendarView extends LinearLayout {
 
         for (int i = 0; i < mDayNamesHeader.getChildCount(); i++) {
             TextView txtDay = (TextView) mDayNamesHeader.getChildAt(i);
-            txtDay.setText(dayLabels[i]);
+            if(dayLabels[i].length() > 1) {
+                txtDay.setText(dayLabels[i].substring(0,1));
+            } else {
+                txtDay.setText(dayLabels[i]);
+            }
         }
     }
 

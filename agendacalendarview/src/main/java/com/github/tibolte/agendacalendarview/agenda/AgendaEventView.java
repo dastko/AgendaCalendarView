@@ -12,6 +12,7 @@ import android.widget.LinearLayout;
  * List item view for the StickyHeaderListView of the agenda view
  */
 public class AgendaEventView extends LinearLayout {
+
     public static AgendaEventView inflate(ViewGroup parent) {
         return (AgendaEventView) LayoutInflater.from(parent.getContext()).inflate(R.layout.view_agenda_event, parent, false);
     }

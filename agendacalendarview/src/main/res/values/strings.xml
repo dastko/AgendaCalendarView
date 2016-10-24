@@ -5,12 +5,12 @@
     <string name="day_name_format">EEEEE</string>
 
     <!-- Agenda -->
-    <string name="today">Today</string>
-    <string name="tomorrow">Tomorrow</string>
+    <string name="today">VandaagT</string>
+    <string name="tomorrow">Morgen</string>
     <string name="agenda_event_hour_format">kk:mm</string>
     <string name="agenda_event_all_day">All DAY</string>
     <string name="agenda_event_day_duration">d</string>
-    <string name="agenda_event_no_events">No events</string>
+    <string name="agenda_event_no_events">Geen events</string>
 
     <!-- Weather (day parts) -->
     <string name="morning">Morning</string>
