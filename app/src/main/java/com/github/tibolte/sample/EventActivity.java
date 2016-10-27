@@ -32,6 +32,7 @@ import java.util.ArrayList;
 
 import butterknife.Bind;
 import butterknife.ButterKnife;
+import is.symphony.module.api.api.ServiceGenerator;
 
 public class EventActivity extends AppCompatActivity implements View.OnClickListener, TimePicker.OnTimePickerSelectedListener {
 
@@ -88,6 +89,7 @@ public class EventActivity extends AppCompatActivity implements View.OnClickList
     private String endTime;
     private String position;
     private int positionInt;
+    private LoginApi mLoginApi;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -100,6 +102,10 @@ public class EventActivity extends AppCompatActivity implements View.OnClickList
         int color = intent.getIntExtra("COLOR", 0);
         DayItem dayItem = intent.getParcelableExtra("DATE");
         //mTime.setText(DateFormatter.formattedDateFromString(dayItem.toString(), null, null));
+        mLoginApi = new ServiceGenerator.ServiceGeneratorBuilder(LoginApi.class, "", this).build();
+
+
+
         setText(color);
         mTime.setText(dayItem.toString());
         mFirst.setOnClickListener(this);
@@ -112,6 +118,7 @@ public class EventActivity extends AppCompatActivity implements View.OnClickList
         mStartDateLayout.setOnClickListener(this);
         mEndDateLayout.setOnClickListener(this);
         final Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
+
         setSupportActionBar(toolbar);
         if (getSupportActionBar() != null) {
             getSupportActionBar().setDisplayHomeAsUpEnabled(true);

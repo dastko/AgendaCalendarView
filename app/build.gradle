@@ -2,7 +2,7 @@ apply plugin: 'com.android.application'
 apply plugin: 'me.tatarka.retrolambda'
 
 android {
-    compileSdkVersion 23
+    compileSdkVersion 24
     buildToolsVersion "23.0.3"
 
     defaultConfig {
@@ -33,18 +33,20 @@ android {
     }
 }
 
+final APP_COMPAT_VERSION = '24.2.1'
+
+
 configurations {
     compile.exclude module: 'support-annotations'
 }
 
 dependencies {
     compile project(':agendacalendarview')
-
-    compile fileTree(dir: 'libs', include: ['*.jar'])
-
+    compile fileTree(include: ['*.jar'], dir: 'libs')
     // Google libraries
-    compile 'com.android.support:appcompat-v7:23.1.1'
-
+    compile "com.android.support:appcompat-v7:$APP_COMPAT_VERSION"
+    //API libraries
     // Other libraries
-    compile 'com.jakewharton:butterknife:7.0.0'
+    compile 'com.jakewharton:butterknife:7.0.1'
+    compile project(':moduleapi')
 }
